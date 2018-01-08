@@ -1,0 +1,9 @@
+<div class="tabs">
+  <ng-container *ngFor="let tab of tabs">
+    <ng-template
+      [ngTemplateOutlet]="itemTemplate"
+      [ngTemplateOutletContext]="{ $implicit: tab }">
+    </ng-template>
+  </ng-container>
+</div>
+<ng-content></ng-content>

@@ -1,0 +1,28 @@
+@import '../../styles/_variables.scss';
+
+.button-bar {
+  display: flex;
+  justify-content: flex-start;
+  padding: 1em;
+}
+
+.button-prev {
+  @include button-prev;
+}
+
+tabs {
+  padding: 1em 2em;
+}
+
+.content {
+  border-top: 1px solid #ddd;
+  padding-top: 2em;
+}
+
+.content-label {
+  font-size: 150%;
+}
+
+.content-description {
+  padding-top: 0.5em;
+}

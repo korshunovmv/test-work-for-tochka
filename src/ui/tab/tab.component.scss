@@ -1,0 +1,40 @@
+:host(.checked) {
+  z-index: 1;
+}
+
+input {
+  display: none;
+}
+
+.label {
+  display: inline-block;
+  margin: 0 0 -5px;
+  padding: 15px 25px;
+  font-weight: 600;
+  text-align: center;
+  color: #bbb;
+  border: 1px solid transparent;
+  width: 10em;
+  white-space: nowrap;
+  overflow-x: hidden;
+  overflow-y: visible;
+  text-overflow: ellipsis;
+}
+
+.label:before {
+  font-family: fontawesome;
+  font-weight: normal;
+  margin-right: 10px;
+}
+
+.label:hover {
+  color: #888;
+  cursor: pointer;
+}
+
+input:checked + .label {
+  color: #555;
+  border: 1px solid #ddd;
+  border-top: 2px solid orange;
+  border-bottom: 1px solid #fff;
+}

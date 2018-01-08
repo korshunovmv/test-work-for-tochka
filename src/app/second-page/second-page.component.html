@@ -1,0 +1,16 @@
+<div class="button-bar">
+  <a class="button-prev" routerLink="/first-page">First page</a>
+</div>
+<tabs [tabs]="items">
+  <ng-template let-row>
+    <tab
+      [label]="row.label" 
+      [checked]="selectedItem?.id===row.id"
+      (onSelect)="selectedItem=row">
+    </tab>
+  </ng-template>
+  <div class="content" *ngIf="selectedItem">
+    <div class="content-label">Content:</div>
+    <div class="content-description">{{selectedItem.content}}</div>
+  </div>
+</tabs>

@@ -1,0 +1,11 @@
+<div class="button-bar">
+  <a class="button-next" routerLink="/second-page">Second page</a>
+</div>
+<div class="wrapper">
+  <div class="wrapper-list">
+    <div *ngFor="let item of items" class="item" (click)="selectItem(item)" [class.selected]="mapSelectedItems[item.id]">
+      <input id="{{item.id}}" type="checkbox" [(ngModel)]="mapSelectedItems[item.id]" (click)="onClick($event)">
+      <label>{{item.label}}</label>
+    </div>
+  </div>
+</div>

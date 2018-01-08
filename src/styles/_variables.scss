@@ -1,0 +1,75 @@
+$general-spacer: 20px;
+$h1-size: 22px;
+
+/* Button Bar */
+$button-bar-width: 200px;
+$button-bar-bg-color: #ededed;
+
+/* Button */
+$button-bg-color: #0d5287;
+$button-bg-hover-color: #0585e8;
+$button-text-padding: 14px;
+$button-text-color: white;
+$button-height: 22px;
+$button-text-size: 14px;
+
+/* General Button */
+@mixin button() {  
+  position: relative;
+  margin: 0;
+  padding-left: $button-text-padding;
+  padding-right: $button-text-padding;
+  padding-top: ($button-text-padding / 5);
+  padding-bottom: ($button-text-padding / 5);
+  background: $button-bg-color;
+  color: $button-text-color;
+  // font-size: $button-text-size;
+  text-decoration: none;
+
+  &::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    width: 0;
+    height: 0;
+  }
+
+  &:hover { 
+    background: $button-bg-hover-color; 
+  }
+}
+
+/* Arrow Buttons */
+@mixin button-next () {
+  @include button;
+  margin-right: $button-height / 2;
+
+  &::after {
+    border-style: solid;
+
+    right: -$button-height;
+    border-width: $button-height / 2;
+    border-color: transparent transparent transparent $button-bg-color;
+  }
+
+  &:hover::after {
+    border-left-color: $button-bg-hover-color;
+  }
+}
+
+@mixin button-prev () {
+  @include button;
+  margin-left: $button-height / 2;
+
+  &::after {
+    border-style: solid;
+
+    left: -$button-height;
+    border-color: transparent $button-bg-color transparent transparent;
+    border-width: $button-height / 2;
+  }
+
+  &:hover::after {
+    border-right-color: $button-bg-hover-color;
+  }
+}
